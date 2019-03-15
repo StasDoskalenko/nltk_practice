@@ -19,7 +19,7 @@ def get_continuous_chunks(text):
                 current_chunk = []
             else:
                 continue
-    return current_chunk
+    return continuous_chunk
 
 my_sent = "Westminster Abbey, formally titled the Collegiate Church of Saint Peter at Westminster, is a large, " \
            "mainly Gothic abbey church in the City of Westminster, London, England, just to the west of the Palace of " \
