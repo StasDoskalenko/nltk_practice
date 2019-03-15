@@ -5,7 +5,6 @@ PREPOSSESSING
 3) Normalization - different city namings to a single form
 4) POS tagger
 """
-import math
 
 import nltk
 
@@ -54,6 +53,6 @@ tagged_sentence = nltk.pos_tag(sentences[0])
 print tagged_sentence
 
 tree = nltk.ne_chunk(tagged_sentence)
-# tree.draw() TODO: doesn't work in console
+tree.draw()
 
 """End POS tagger"""
