@@ -15,3 +15,4 @@ tagger = PerceptronTagger(False)
 tagger.load(AP_MODEL_LOC)
 pos_tag = tagger.tag
 print ne_chunk(pos_tag(word_tokenize(sentence)))
+
