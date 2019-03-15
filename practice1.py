@@ -5,6 +5,7 @@ PREPOSSESSING
 3) Normalization - different city namings to a single form
 4) POS tagger
 """
+import math
 
 import nltk
 
@@ -21,8 +22,8 @@ print sentences[0]
 """
 Stemmer < stemmer faster than lemmatizer
 """
-stemmer = nltk.stem.SnowballStemmer("english")
-print [stemmer.stem(word) for word in sentences[0]]
+# stemmer = nltk.stem.SnowballStemmer("english")
+# print [stemmer.stem(word) for word in sentences[0]]
 
 """Lancaster"""
 
@@ -53,7 +54,6 @@ tagged_sentence = nltk.pos_tag(sentences[0])
 print tagged_sentence
 
 tree = nltk.ne_chunk(tagged_sentence)
-tree.draw()
+# tree.draw() TODO: doesn't work in console
 
 """End POS tagger"""
-
