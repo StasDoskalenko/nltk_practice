@@ -1,11 +1,11 @@
 """PERCEPTRON TAGGER"""
 
-from nltk import word_tokenize, pos_tag, ne_chunk
-
-sentence = "Mark and Jogn are working at Google."
-
+from nltk import word_tokenize, ne_chunk
 from nltk.tag import PerceptronTagger
 from nltk.data import find
+
+sentence = "Mark and Spencer are working at Google."
+
 PICKLE = "averaged_perceptron_tagger.pickle"
 AP_MODEL_LOC = 'file:'+str(find('taggers/averaged_perceptron_tagger/'+PICKLE))
 tagger = PerceptronTagger(False)
