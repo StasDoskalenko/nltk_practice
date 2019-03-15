@@ -7,7 +7,6 @@ PREPOSSESSING
 """
 
 import nltk
-from nltk.corpus import stopwords
 
 text = "This approach still has many problems but we will mova on define a function to perform stemming. " \
        "And apply it to a whole text "
@@ -30,11 +29,22 @@ print [stemmer.stem(word) for word in sentences[0]]
 lancaster = nltk.LancasterStemmer()
 print [lancaster.stem(t) for t in sentences[0]]
 
-
 """WordNet lemmatization"""
 wnl = nltk.WordNetLemmatizer()
 print "WordNet"
 print [wnl.lemmatize(t) for t in sentences[0]]
 
 """Stop words"""
-print stopwords.words("english")
+# print nltk.corpus.stopwords.words("english")
+
+
+def content_fraction(text):
+    from nltk.corpus import stopwords
+    stopwords = stopwords.words("english")
+    content = [w for w in text if w.lower() not in stopwords]
+    return len(content) / len(text)
+
+
+print content_fraction(nltk.corpus.reuters.words()) # 0 ???
+
+
