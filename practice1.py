@@ -38,13 +38,22 @@ print [wnl.lemmatize(t) for t in sentences[0]]
 # print nltk.corpus.stopwords.words("english")
 
 
-def content_fraction(text):
+def content_fraction(text_param):
     from nltk.corpus import stopwords
     stopwords = stopwords.words("english")
-    content = [w for w in text if w.lower() not in stopwords]
-    return len(content) / len(text)
+    content = [w for w in text_param if w.lower() not in stopwords]
+    return len(content) / len(text_param)
 
 
-print content_fraction(nltk.corpus.reuters.words()) # 0 ???
+# print content_fraction(nltk.corpus.reuters.words())  # 0 ???
 
+"""Start POS tagger"""
+
+tagged_sentence = nltk.pos_tag(sentences[0])
+print tagged_sentence
+
+tree = nltk.ne_chunk(tagged_sentence)
+tree.draw()
+
+"""End POS tagger"""
 
